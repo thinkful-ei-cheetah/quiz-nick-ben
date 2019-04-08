@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 'use strict';
 
 class TriviaApi {
@@ -8,14 +9,14 @@ class TriviaApi {
 
     getQuestions() {
         return fetch(`${this.base_url}?amount=${this.amount}`)
-            .then(res => { return res.json() })
-            .then((resJson) => {
-                return resJson.results;
-            })
-            .then((data) => {questions.push(data)});
-    };
-
-    
+            .then(res => { return res.json(); })
+            .then((data) => {
+                return data.results;
+            });
+            // .then((questions) => {questions.forEach(question => Quiz.unasked.push(question));});
+    }
 }
 
-const questions = [];
+// const api = new TriviaApi;
+// api.getQuestions()
+//     .then(questions)
